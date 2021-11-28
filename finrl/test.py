@@ -8,6 +8,9 @@ from finrl.apps.config import (
 )
 from finrl.finrl_meta.env_stock_trading.env_stocktrading import StockTradingEnv
 
+# import data processor
+from finrl.finrl_meta.data_processor import DataProcessor
+
 
 def test(
     start_date,
@@ -27,9 +30,6 @@ def test(
     from finrl.drl_agents.stablebaselines3.models import DRLAgent as DRLAgent_sb3
     from finrl.drl_agents.rllib.models import DRLAgent as DRLAgent_rllib
     from finrl.drl_agents.elegantrl.models import DRLAgent as DRLAgent_erl
-
-    # import data processor
-    from finrl.finrl_meta.data_processor import DataProcessor
 
     # fetch data
     DP = DataProcessor(data_source, **kwargs)
